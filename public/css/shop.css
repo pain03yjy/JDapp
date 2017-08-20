@@ -1,0 +1,69 @@
+
+
+.jd_shop_header{
+    position: fixed;/*是以  window 最外层容器 计算*/
+    left: 0;
+    top: 0;
+    height: 40px;
+    width: 100%;
+    z-index: 1000;
+
+}
+
+.jd_shop_header > .jd_shop_header_box{
+    width: 100%;
+    max-width: 640px;/*设计图的原因  不然它放大*/
+    min-width: 300px;/*为了更好的布局*/
+    margin: 0 auto;
+    background:#E7E7E7;
+    height: 40px;
+    position: relative;
+    border-bottom:2px solid #E6E6E6;
+}
+.jd_shop_header > .jd_shop_header_box >a{
+    color:#6D6F79;
+    float:left;
+    line-height:40px;
+    margin-left:5px;
+    font-size:18px;
+}
+.jd_shop_header > .jd_shop_header_box >p{
+    line-height:40px;
+    text-align:center;
+    font-size:18px;
+    color:black;
+}
+
+.shop_main{
+    margin-top:60px;
+    padding: 0 5px;
+    text-align:center;
+    line-height:25px;
+}
+.shop_main > .shoping > span{
+    width:100%;
+    font-size:40px;
+    color:#6D6F79;
+}
+
+.shop_main > .shoping > p{
+    width:100%;
+    color:#6D6F79;
+}
+
+.shop_main > .shoping_banner > img{
+    width:100%;
+    margin:10px 0;
+}
+
+.jd_list>li{
+    float:left;
+    display:inline-block;
+    width:50%;
+    height:318px;
+}
+.jd_list>li>p>span{
+    float:right;
+    margin-right:10px;
+    color: rgba(201,21,35,1);
+}

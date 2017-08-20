@@ -1,0 +1,30 @@
+
+.jd_login{
+    width:100%;
+    background: url("../imgs/bg.png") no-repeat;
+    text-align: center;
+    height:150px;
+    padding-top:20px;
+    margin-bottom:20px;
+}
+.jd_login> .avactor{
+    margin-left:20px;
+    display:inline-block;
+    /*border:1px solid;*/
+}
+.jd_login> .avactor>img{
+    width:64px;
+    border-radius:50px;
+}
+.jd_login> span{
+    color: white;
+    margin-left:10px;
+}
+.jd_login >a.btn_exist{
+    display:block;
+    margin-top: 31px;
+}
+
+.jd_login >a.btn_login{
+    display:block;
+}

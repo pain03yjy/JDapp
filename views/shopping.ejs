@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- meta:viewport-->
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0"/>
+    <title>购物车</title>
+    <link rel="stylesheet" href="./css/base.css"/>
+    <link rel="stylesheet" href="./css/index.css"/>
+    <link rel="stylesheet" href="./css/bootstrap.css"/>
+    <link rel="stylesheet" href="./css/shop.css"/>
+</head>
+<body>
+<div class="jd_layout">
+        <header class="jd_shop_header">
+            <div class="jd_shop_header_box">
+                <a href="/" class="glyphicon glyphicon-chevron-left"></a>
+                <p>购物车</p>
+                <div class="clear"></div>
+            </div>
+
+        </header>
+        <div class="shop_main">
+            <div class="shoping">
+                <span class="glyphicon glyphicon-shopping-cart"></span>
+                <p>登陆后可查看购物车</p>
+                <a href="/lr" class="btn btn-danger btn-xs">登录</a>
+            </div>
+            <div class="shoping_banner">
+                <img src="./imgs/新人专享.png" alt="">
+            </div>
+        </div>
+    <main class="jd_product">
+        <!--商品子盒子-->
+        <section class="product_box jd_sk">
+            <!--头部-->
+            <div class="product_box_tit no_border">
+                <div class="f_left m_l10">
+                    <span class="sk_icon"></span>
+                    <span class="sk_name m_l10">掌上秒杀</span>
+                    <div class="sk_time m_l10">
+                        <span>0</span>
+                        <span>0</span>
+                        <span>:</span>
+                        <span>0</span>
+                        <span>0</span>
+                        <span>:</span>
+                        <span>0</span>
+                        <span>0</span>
+                    </div>
+                </div>
+                <div class="f_right m_r10"><a href="#">更多&gt;</a></div>
+            </div>
+            <!--内容-->
+            <div class="product_box_con">
+                <ul class="clearfix">
+                    <li>
+                        <a href="#"><img src="./imgs/detail01.jpg" alt=""></a>
+                        <p>¥10.00</p>
+                        <p>¥100.00</p>
+                    </li>
+                    <li>
+                        <a href="#"><img src="./imgs/detail02.jpg" alt=""></a>
+                        <p>¥10.00</p>
+                        <p>¥100.00</p>
+                    </li>
+                    <li>
+                        <a href="#"><img src="./imgs/detail01.jpg" alt=""></a>
+                        <p>¥10.00</p>
+                        <p>¥100.00</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!--商品子盒子-->
+        <section class="product_box">
+            <!--头部-->
+            <div class="product_box_tit"><h3>猜你喜欢</h3></div>
+            <!--内容-->
+            <div class="product_box_con clearfix">
+                <ul class="jd_list" >
+                    <%for(var i=0;i<shops.length;i++){%>
+                    <li>
+                        <img src="./imgs/<%=shops[i].shop_name%>.jpg" alt="" width="205" height="197">
+                        <p><%=shops[i].shop_detail%></p>
+                        <p>&yen;<%=shops[i].price%>  <span class="glyphicon glyphicon-shopping-cart"></span></p>
+                    </li>
+                    <%}%>
+
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <footer class="jd_footer">
+        <div class="jd_footer_box">
+            <div>
+                <a href="/">
+                        <span class="glyphicon glyphicon-home">
+                       <p>首页</p>
+                    </span>
+                </a>
+            </div>
+            <div>
+                <a href="/shopping">
+                        <span class="glyphicon glyphicon-shopping-cart jdcolor">
+                             <p>购物车</p>
+                        </span>
+                </a>
+            </div>
+            <div>
+                <a href="/my">
+                        <span class="glyphicon glyphicon-user">
+                            <p>我的</p>
+                        </span>
+                </a>
+            </div>
+
+        </div>
+    </footer>
+</div>
+</body>
+<script type="text/javascript">
+    // 倒计时秒杀
+        function daojishi(){
+
+            var alltime = (24*60*60)-1;//console.log(alltime);
+
+            var sk_time = document.querySelector(".sk_time");//console.log(sk_time.children[0]);
+
+            function Time(){
+                var h1 = Math.floor((alltime/60/60%24)/10);//console.log(h1);
+                var h2 = Math.floor((alltime/60/60%24)%10);//console.log(h2);
+
+                var m1 = Math.floor((alltime/60%60)/10);//console.log(m1);
+                var m2 = Math.floor((alltime/60%60)%10);//console.log(m2);
+
+                var s1 = Math.floor((alltime%60)/10);//console.log(s1);
+                var s2 = Math.floor((alltime%60)%10);//console.log(s2);
+
+                if(alltime==0){
+                    clearInterval(t);
+                    return false;
+                }else{
+                    alltime--;//console.log(alltime);
+
+                    sk_time.children[0].innerHTML = h1;
+                    sk_time.children[1].innerHTML = h2;
+
+                    sk_time.children[3].innerHTML = m1;
+                    sk_time.children[4].innerHTML = m2;
+
+                    sk_time.children[6].innerHTML = s1;
+                    sk_time.children[7].innerHTML = s2;
+
+                };
+
+
+            };
+            Time();
+            var t = setInterval(Time,1000);
+
+        };
+    daojishi()
+
+</script>
+</html>
